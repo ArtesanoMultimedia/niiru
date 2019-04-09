@@ -14,7 +14,9 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        //
+        $actividades = Actividad::all();
+
+        return view('planes.show', compact('actividades'));
     }
 
     /**
