@@ -13,16 +13,21 @@
         <div class="card-columns">
         @foreach ($sitios as $sitio)
 
-            
+        <?php try { ?>
                 <div class="card" style="width: 18rem;">
-                <?php try { ?>
+                
                     <img src="{{ $sitio->picture_url }}" class="card-img-top" alt="Imagen de {{ $sitio->name }}">
-                <?php } catch (\Throwable $th) {} ?>
                     <div class="card-body">
                         <h5 class="card-title">{{ $sitio->name }}</h5>
-                        <a href="#" class="btn btn-primary">Añadir</a>
+                        <form action="{{ route('actividades.store') }}" method="post">
+                            @csrf
+                        <input type="hidden" name="nombre" value="{{ $sitio->name }}">
+                        <input type="hidden" name="img" value="{{ $sitio->picture_url }}">
+                            <button type="submit" class="btn btn-primary">Añadir</button>
+                        </form>
                     </div>
                 </div>
+                <?php } catch (\Throwable $th) {} ?>
 
         @endforeach
 

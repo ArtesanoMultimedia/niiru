@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Actividad;
 
 class ActividadController extends Controller
 {
@@ -34,7 +35,12 @@ class ActividadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $actividad = new Actividad([
+            'nombre' => $request->nombre,
+            'img' => $request->img,
+        ]);
+        $actividad->save();
+        return redirect('/')->with('success', 'Guardado.');
     }
 
     /**

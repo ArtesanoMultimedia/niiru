@@ -27,4 +27,7 @@ class Actividad extends Model
     {
         return $this->belongsTo('App\Plan');
     }
+
+    protected $fillable = ['nombre', 'img'];
+
 }

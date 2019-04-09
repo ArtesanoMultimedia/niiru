@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Plan;
+use Auth;
+
 
 class PlanController extends Controller
 {
@@ -23,7 +26,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +37,12 @@ class PlanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $plan = new Plan([
+            'user_id' => Auth::id(),
+            'titulo' => $request->titulo,
+        ]);
+        $plan->save();
+        return redirect('/')->with('success', 'Guardado.');
     }
 
     /**

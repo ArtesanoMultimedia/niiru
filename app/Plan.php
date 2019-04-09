@@ -36,5 +36,5 @@ class Plan extends Model
         return $this->belongsTo('App\User');
     }
 
-    protected $fillable = ['titulo'];
+    protected $fillable = ['titulo', 'user_id'];
 }

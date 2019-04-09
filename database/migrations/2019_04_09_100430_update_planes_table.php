@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterActividadesTable extends Migration
+class UpdatePlanesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,7 @@ class AlterActividadesTable extends Migration
      */
     public function up()
     {
-        Schema::table('actividades', function (Blueprint $table) {
-            //$table->foreign('plan_id')->references('id')->on('planes');
-        });
+        //
     }
 
     /**
@@ -25,8 +23,6 @@ class AlterActividadesTable extends Migration
      */
     public function down()
     {
-        Schema::table('actividades', function (Blueprint $table) {
-            //$table->dropForeign('actividades_plan_id_foreign');
-        });
+        //
     }
 }

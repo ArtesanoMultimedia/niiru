@@ -18,10 +18,10 @@ class CreatePlansTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('titulo',100);
             $table->timestamps();
-            $table->boolean('privado');// por defecto: true
-            $table->unsignedInteger('votos');
-            $table->unsignedInteger('puntos');
-            $table->tinyInteger('puntuacion');// puntuacion = puntos/votos
+            $table->boolean('privado')->default(true);// por defecto: true
+            $table->unsignedInteger('votos')->nullable($value = true)->default(null);
+            $table->unsignedInteger('puntos')->nullable($value = true)->default(null);
+            $table->tinyInteger('puntuacion')->nullable($value = true)->default(null);// puntuacion = puntos/votos
 
             $table->foreign('user_id')->references('id')->on('users');
         });
