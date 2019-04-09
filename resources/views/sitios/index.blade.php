@@ -7,14 +7,16 @@
     <title>niiru</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body>
-    <div class="container-fluid">
-        <h1>Sitios próximos:</h1>
-        <div class="card-columns">
+<body style='background-color:#9e9e9e'>
+<br>
+    <div class="container-fluid .flex-column .justify-content-center" >
+        <h1 class="title">Sitios próximos:</h1>
+        <br>
+        <div class="card-columns ">
         @foreach ($sitios as $sitio)
 
-        <?php try { ?>
-                <div class="card" style="width: 18rem;">
+                <?php try { ?>
+                <div class="card text-center " style="width: 20rem; background-image:url(./img/niiru/fondos/fondo_cerca-de-ti(1080x1000).jpg)">
                 
                     <img src="{{ $sitio->picture_url }}" class="card-img-top" alt="Imagen de {{ $sitio->name }}">
                     <div class="card-body">
@@ -23,7 +25,7 @@
                             @csrf
                         <input type="hidden" name="nombre" value="{{ $sitio->name }}">
                         <input type="hidden" name="img" value="{{ $sitio->picture_url }}">
-                            <button type="submit" class="btn btn-primary">Añadir</button>
+                            <button type="submit" class="btn btn-primary" style="background-color:#73a237">Añadir</button>
                         </form>
                     </div>
                 </div>
