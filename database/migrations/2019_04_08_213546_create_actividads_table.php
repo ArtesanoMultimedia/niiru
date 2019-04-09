@@ -14,8 +14,9 @@ class CreateActividadsTable extends Migration
     public function up()
     {
         Schema::create('actividades', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('plan_id');
+            $table->unsignedBigInteger('plan_id')->unsigned();
             $table->date('dia');
             $table->unsignedTinyInteger('bloque');// 1: mañana, 2: mediodia, 3: tarde, 4: noche
             $table->unsignedTinyInteger('orden');
@@ -29,8 +30,6 @@ class CreateActividadsTable extends Migration
             $table->timestamp('llegada');// por defecto null
             $table->timestamp('salida');// por defecto null
             $table->boolean('hecho');// por defecto: false
-
-            $table->foreign('plan_id')->references('id')->on('planes');
         });
     }
 
