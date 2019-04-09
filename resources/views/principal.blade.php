@@ -13,7 +13,6 @@
 
                   <h3>introduce la ciudad</h3>
                   <input type="text" placeholder="INTRODUCE UNA CIUDAD">
-                  
                 </div>
             </div>
         </div>
