@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Planificador</h1>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" aria-current="page">Inicio</li>
+        </ol>
+      </nav>
     @foreach ($actividades as $actividad)
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
